@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Educational Hub | Stock Market Education Channel</title>
+<meta name="description" content="Educational Hub: free daily Nifty, BankNifty and Sensex levels with stock market education on Telegram.">
+<!-- Meta Pixel Code: replace YOUR_PIXEL_ID with your real Pixel ID (digits only) -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f8fc;
+    --card: #ffffff;
+    --ink: #151a2d;
+    --muted: #667085;
+    --blue: #0a62ff;
+    --blue-dark: #0049d6;
+    --blue-soft: #e8f0ff;
+    --line: #e4e8f0;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 36px 20px 40px;
+    text-align: center;
+  }
+
+  /* ---------- Logo + name ---------- */
+  .logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 22px;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 30px rgba(10, 30, 80, 0.14);
+    background: #fff;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+  }
+
+  .tagline {
+    margin-top: 8px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--blue);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 26px 0 0;
+    padding: 18px 20px;
+    border: 0;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(10, 98, 255, 0.28);
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(10, 98, 255, 0.4);
+    background: linear-gradient(135deg, #1a72ff, #0038b8);
+  }
+
+  .btn:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow: 0 6px 14px rgba(10, 98, 255, 0.3);
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid #9dc0ff;
+    outline-offset: 3px;
+  }
+
+  /* ---------- Pointer emojis above first button ---------- */
+  .pointer {
+    margin-top: 22px;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    animation: bounce 1s ease-in-out infinite;
+  }
+
+  .pointer + .btn { margin-top: 10px; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(-6px); }
+    50%      { transform: translateY(8px); }
+  }
+
+  /* ---------- Stat cards ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .stat {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 20px 6px;
+    box-shadow: 0 4px 14px rgba(10, 30, 80, 0.06);
+  }
+
+  .stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--blue);
+    line-height: 1.2;
+  }
+
+  .stat span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* ---------- Headline block ---------- */
+  .headline {
+    margin-top: 40px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 6.4vw, 2rem);
+    line-height: 1.3;
+  }
+
+  .headline em {
+    font-style: normal;
+    color: var(--blue);
+  }
+
+  .sub {
+    margin: 14px auto 0;
+    max-width: 38ch;
+    color: var(--muted);
+    font-size: 1.02rem;
+  }
+
+  /* ---------- Info strip ---------- */
+  .notice {
+    margin-top: 28px;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: #fff4e3;
+    color: #b24a00;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* ---------- Feature list ---------- */
+  .features {
+    list-style: none;
+    margin-top: 28px;
+    display: grid;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .features li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 18px;
+    padding: 16px 18px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    box-shadow: 0 4px 14px rgba(10, 30, 80, 0.06);
+  }
+
+  .features .icon {
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--blue-soft);
+    font-size: 1.5rem;
+  }
+
+  .trust {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  
+  /* ---------- Disclaimer ---------- */
+  .disclaimer {
+    margin-top: 36px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: #8a93a5;
+    line-height: 1.65;
+  }
+
+  .disclaimer b { color: #7a8397; }
+
+  @media (min-width: 600px) {
+    .wrap { padding-top: 56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pointer { animation: none; }
+    .btn { transition: none; }
+    .btn:hover, .btn:focus-visible { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <!-- Logo: keep naksh.jpg in the same folder as index.html -->
+  <img class="logo" src="naksh.jpg" alt="Educational Hub logo" width="150" height="150">
+
+  <h1>Educational Hub</h1>
+  <p class="tagline">Stock Market Education Channel</p>
+
+  <!-- Replace the link below with your Telegram channel link -->
+  <div class="pointer" aria-hidden="true">👇🏻 👇🏻</div>
+  <a class="btn tg-btn" href="https://t.me/YOUR_CHANNEL_USERNAME" target="_blank" rel="noopener">Join Free Telegram Channel &rarr;</a>
+
+  <!-- Replace these three with your real numbers if you want (members, years, etc.) -->
+  <section class="stats" aria-label="Channel highlights">
+    <div class="stat"><strong>Free</strong><span>Channel</span></div>
+    <div class="stat"><strong>Daily</strong><span>Market Levels</span></div>
+    <div class="stat"><strong>Learn</strong><span>Market Basics</span></div>
+  </section>
+
+  <h2 class="headline">Learn with <em>free daily market levels</em> for NIFTY, BANKNIFTY &amp; SENSEX</h2>
+  <p class="sub">Learn how the market works with free daily analysis and easy-to-follow explanations.</p>
+
+  <div class="notice">Join our learning community on Telegram.</div>
+
+  <a class="btn tg-btn" href="https://t.me/YOUR_CHANNEL_USERNAME" target="_blank" rel="noopener">Join Free Telegram Channel &rarr;</a>
+
+  <ul class="features">
+    <li><span class="icon" aria-hidden="true">📊</span>Daily Nifty &amp; BankNifty Levels Explained</li>
+    <li><span class="icon" aria-hidden="true">🎓</span>Learning-Focused Content</li>
+    <li><span class="icon" aria-hidden="true">📚</span>Learn Market Basics Step by Step</li>
+    <li><span class="icon" aria-hidden="true">💬</span>Simple, Free Learning Content</li>
+  </ul>
+
+  <p class="trust">Free to join &bull; Learn at your own pace</p>
+
+  <p class="disclaimer">
+    <b>Disclaimer:</b> This channel is for educational and informational purposes only.
+    We do not provide investment advice or guaranteed returns. Trading in the stock market
+    involves risk. Please consult your financial advisor before making any investment decisions.
+  </p>
+
+</main>
+
+<script>
+  // Meta Pixel "Subscribe" event on every Telegram button click
+  document.querySelectorAll('.tg-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Subscribe');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>fna
